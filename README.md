@@ -63,12 +63,12 @@ php artisan serve
 
 <img src="/resources/img/3.jpg" alt="Tela de Cadastros"/>
 
-### 7 - Exemplpo de Exclusão
+### 7 - Exemplo de Exclusão
 
 <img src="/resources/img/4.jpg" alt="Tela de Cadastros"/>
 
-### 8 - Visualize todas as alteração no PhPMyAdmin
+### 8 - Visualize todas as alterações do banco de dados no PhPMyAdmin
 
 <li>http://localhost:8080</li>
-<li>Mesmos usuários e senha do MySQl, como sugestão:</li>
+<li>Mesmos usuário e senha do MySQl, como sugestão:</li>
 <li>host: mysql, usuário: root, senha: 1234</li>
