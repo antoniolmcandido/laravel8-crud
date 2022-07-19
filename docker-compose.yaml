@@ -1,0 +1,52 @@
+version: '2'
+
+volumes:
+  mysql-v:
+    driver: local
+
+  redis-v:
+    driver: local
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    volumes:
+      - mysql-v:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=laravel8_crud
+  
+  # host: mysql, usuário: root, senha: 1234
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+
+  cache:
+    image: redis:4.0
+    container_name: redis
+    command: --appendonly yes
+    volumes:
+      - redis-v:/data
+    ports:
+      - '6380:6379'
+
+  app:
+    image: ambientum/php:8.1-nginx
+    container_name: app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - '8000:80'
+    environment:
+      XDEBUG_ENABLED: 'true'
+    links:
+      - mysql
+      - cache
