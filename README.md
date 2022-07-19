@@ -70,5 +70,5 @@ php artisan serve
 ### 8 - Visualize todas as alterações do banco de dados no PhPMyAdmin
 
 <li>http://localhost:8080</li>
-<li>Mesmos usuário e senha do MySQl, como sugestão:</li>
+<li>Mesmo usuário e mesma senha do MySQl, como sugestão:</li>
 <li>host: mysql, usuário: root, senha: 1234</li>
